@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm Toán 7 PWA</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; background: #f4f4f4; }
+        .container { max-width: 600px; background: white; padding: 20px; border-radius: 10px; margin: auto; }
+        .question { margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #ddd; }
+        .btn { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        .result { font-weight: bold; color: blue; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Toán 7 - Kiểm tra PWA</h1>
+        <div id="quiz">
+            <!-- Câu hỏi mẫu -->
+            <div class="question">
+                <p><b>Câu 1:</b> Số nào là số hữu tỉ?</p>
+                <input type="radio" name="q1" value="A"> A. 1/2 <br>
+                <input type="radio" name="q1" value="B"> B. √2 <br>
+            </div>
+            
+            <div class="question">
+                <p><b>Câu 2:</b> Tổng 3 góc trong một tam giác bằng bao nhiêu độ?</p>
+                <input type="radio" name="q2" value="A"> A. 90° <br>
+                <input type="radio" name="q2" value="B"> B. 180° <br>
+            </div>
+        </div>
+        <button class="btn" onclick="checkQuiz()">Nộp bài</button>
+        <div id="result" class="result"></div>
+        <hr>
+        <p><a href="https://github.com">Tải file Word tại đây</a></p>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            let score = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === 'A') score++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === 'B') score++;
+            document.getElementById('result').innerText = "Bạn đúng: " + score + "/2 câu.";
+        }
+    </script>
+</body>
+</html>
